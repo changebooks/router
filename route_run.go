@@ -21,7 +21,7 @@ func (x *Route) Run(holder *Holder) error {
 	}
 
 	if err = CheckMethod(holder.Request.Method, action.AllowMethods()); err != nil {
-		holder.Result = kernel.NewMethodErr(nil)
+		holder.Result = kernel.NewMethodNotAllowed(nil)
 		return err
 	}
 
